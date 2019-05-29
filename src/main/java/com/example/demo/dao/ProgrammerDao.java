@@ -12,7 +12,7 @@ public interface ProgrammerDao {
 			void setProgrammerAsString(String idKey, String programmer) ;
 
 			String getProgrammerAsString(String idKey);
-			/*
+			
 			
 			// list
 			void AddToProgrammersList(Programmer programmer);
@@ -20,6 +20,8 @@ public interface ProgrammerDao {
 			List<Programmer> getProgrammersListMembers();
 
 			Long getProgrammersListCount();
+			
+			/*
 			
 			// Set
 			void AddToProgrammersSet(Programmer ... programmers);

@@ -13,14 +13,14 @@ public interface ProgrammerService {
 
 			String getProgrammerAsString(String key);
 			
-			/*
+			
 			// list
 			void AddToProgrammersList(Programmer programmer);
 
 			List<Programmer> getProgrammersListMembers();
 
 			Long getProgrammersListCount();
-			
+			/*
 			
 			// Set
 			void AddToProgrammersSet(Programmer ... programmers);
