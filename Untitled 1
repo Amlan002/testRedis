@@ -1,0 +1,3 @@
+open cmd 
+enter redis-cli
+then enter "monitor" to check the redis working

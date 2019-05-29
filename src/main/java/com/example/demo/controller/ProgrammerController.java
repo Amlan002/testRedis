@@ -1,6 +1,7 @@
 package com.example.demo.controller;
 
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -81,6 +82,43 @@ public class ProgrammerController {
 		@RequestMapping(method = RequestMethod.POST, value = "/programmers-set/member")
 		public boolean isSetMember(@RequestBody Programmer programmer) {
 			return programmerService.isSetMember(programmer);
+
+		}
+		
+		/*****************HASH Demo**********************/
+
+		// add programmer to hash
+		@RequestMapping(method = RequestMethod.POST, value = "/programmers-hash")
+		public void savePHash(@RequestBody Programmer programmer) {
+			programmerService.savePHash(programmer);
+
+		}
+
+		// update programmer in hash
+		@RequestMapping(method = RequestMethod.PUT, value = "/programmers-hash")
+		public void updatePHash(@RequestBody Programmer programmer) {
+			programmerService.updatePHash(programmer);
+
+		}
+
+		// get all programmers from hash
+		@RequestMapping(method = RequestMethod.GET, value = "/programmers-hash")
+		public Map<Integer, Programmer> FindAllPHash() {
+			return programmerService.findAllPHash();
+
+		}
+
+		// get programmer from hash
+		@RequestMapping(method = RequestMethod.GET, value = "/programmers-hash/{id}")
+		public Programmer FindPInHash(@PathVariable int id) {
+			return programmerService.findPInHash(id);
+
+		}
+
+		// delete programmer from hash
+		@RequestMapping(method = RequestMethod.DELETE, value = "/programmers-hash/{id}")
+		public void deletePhash(@PathVariable int id) {
+			programmerService.deletePhash(id);
 
 		}
 }

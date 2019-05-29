@@ -7,6 +7,7 @@ import java.util.concurrent.TimeUnit;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.data.redis.core.HashOperations;
 import org.springframework.data.redis.core.ListOperations;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.SetOperations;
@@ -31,7 +32,10 @@ public class ProgrammerDaoImpl implements ProgrammerDao{
 	
 	@Autowired
 	@Qualifier("setOperations")
-	 private SetOperations<String, Programmer> setOps;
+	private SetOperations<String, Programmer> setOps;
+	
+	@Autowired
+	private HashOperations<String, Integer, Programmer> hashOps;
 	
 	@Override
 	public void setProgrammerAsString(String idKey, String programmer) {
@@ -77,31 +81,29 @@ public class ProgrammerDaoImpl implements ProgrammerDao{
 
 	@Override
 	public void saveHash(Programmer programmer) {
-		// TODO Auto-generated method stub
+		hashOps.put(REDIS_HASH_KEY, programmer.getId(), programmer);
 		
 	}
 
 	@Override
 	public void updateHash(Programmer programmer) {
-		// TODO Auto-generated method stub
+		hashOps.put(REDIS_HASH_KEY, programmer.getId(), programmer);
 		
 	}
 
 	@Override
 	public Map<Integer, Programmer> findAllHash() {
-		// TODO Auto-generated method stub
-		return null;
+		return hashOps.entries(REDIS_HASH_KEY);
 	}
 
 	@Override
 	public Programmer findInHash(int id) {
-		// TODO Auto-generated method stub
-		return null;
+		return hashOps.get(REDIS_HASH_KEY, id);
 	}
 
 	@Override
 	public void deleteHash(int id) {
-		// TODO Auto-generated method stub
+		hashOps.delete(REDIS_HASH_KEY, id);
 		
 	}
 
