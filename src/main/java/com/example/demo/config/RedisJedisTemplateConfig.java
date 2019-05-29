@@ -21,18 +21,18 @@ import com.example.demo.model.Programmer;
 @Configuration
 public class RedisJedisTemplateConfig {
 
-	@Value("${spring.redis.host}")
+	@Value("${redis.host}")
 	private String host;
-	@Value("${spring.redis.password}")
+	@Value("${redis.password}")
 	private String password;
-	@Value("${spring.redis.port}")
+	@Value("${redis.port}")
 	private int port;
 
-	@Value("${spring.redis.jedis.pool.max-active}")
+	@Value("${redis.jedis.pool.max-total}")
 	private int maxTotal;
-	@Value("${spring.redis.jedis.pool.max-idle}")
+	@Value("${redis.jedis.pool.max-idle}")
 	private int maxIdle;
-	@Value("${spring.redis.jedis.pool.min-idle}")
+	@Value("${redis.jedis.pool.min-idle}")
 	private int minIdle;
 	
 	

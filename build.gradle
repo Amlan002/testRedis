@@ -15,7 +15,7 @@ repositories {
 
 dependencies {
 	// https://mvnrepository.com/artifact/redis.clients/jedis
-	compile group: 'redis.clients', name: 'jedis', version: '3.1.0-m1'
+	compile group: 'redis.clients', name: 'jedis', version: '2.9.0'
 			
 	implementation 'org.springframework.boot:spring-boot-starter-data-redis'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
@@ -24,3 +24,8 @@ dependencies {
 	compile group: 'org.apache.commons', name: 'commons-pool2', version: '2.6.2'
 	
 }
+/*
+configurations {
+    compile.exclude module: 'lettuce-core'
+} 
+*/
