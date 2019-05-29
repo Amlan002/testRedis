@@ -20,7 +20,7 @@ public interface ProgrammerService {
 			List<Programmer> getProgrammersListMembers();
 
 			Long getProgrammersListCount();
-			/*
+			
 			
 			// Set
 			void AddToProgrammersSet(Programmer ... programmers);
@@ -40,5 +40,5 @@ public interface ProgrammerService {
 			Programmer findPInHash(int id);
 
 			void deletePhash(int id);
-			*/
+			
 }

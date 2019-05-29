@@ -21,7 +21,7 @@ public interface ProgrammerDao {
 
 			Long getProgrammersListCount();
 			
-			/*
+			
 			
 			// Set
 			void AddToProgrammersSet(Programmer ... programmers);
@@ -29,6 +29,7 @@ public interface ProgrammerDao {
 			Set<Programmer> getProgrammersSetMembers();
 			
 			boolean isSetMember(Programmer programmer);
+			
 			
 			// Hash
 			void saveHash(Programmer programmer);
@@ -40,6 +41,6 @@ public interface ProgrammerDao {
 			Programmer findInHash(int id);
 
 			void deleteHash(int id);
-			*/
+			
 	
 }

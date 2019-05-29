@@ -1,6 +1,7 @@
 package com.example.demo.controller;
 
 import java.util.List;
+import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -59,4 +60,27 @@ public class ProgrammerController {
 
 		}
 
+
+		// *******************SET Demo*******************//
+
+		// add programmers to set
+		@RequestMapping(method = RequestMethod.POST, value = "/programmers-set")
+		public void AddToProgrammerstSet(@RequestBody Programmer... programmers) {
+ 			programmerService.AddToProgrammersSet(programmers);
+
+		}
+
+		// get all programmers from a set
+		@RequestMapping(method = RequestMethod.GET, value = "/programmers-set")
+		public Set<Programmer> getProgrammersSetMembers() {
+			return programmerService.getProgrammersSetMembers();
+
+		}
+
+		// Check if programmer already exists in the set
+		@RequestMapping(method = RequestMethod.POST, value = "/programmers-set/member")
+		public boolean isSetMember(@RequestBody Programmer programmer) {
+			return programmerService.isSetMember(programmer);
+
+		}
 }
